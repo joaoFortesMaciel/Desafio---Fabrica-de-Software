@@ -1,0 +1,24 @@
+<!--Servem para trazer estatisticas e o cabeçalho do Template-->
+{% load static %}
+{% include "cinema/header.html" %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bem-vindo ao Cinema</title>
+  <link rel="stylesheet" href="{% static 'cinema/style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>Catálogo</h1>
+  </header>
+  <main>
+    <!--Integra os dados da API ao HTML-->
+    {% for data in data %}
+      <p>{{ data.name }}</p>
+    {% endfor %}
+  </main>
+</body>
+</html>
